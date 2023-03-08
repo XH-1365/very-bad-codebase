@@ -1,1 +1,1 @@
-# very-bad-codebase
+# 这个是我个人库，主要写蓝桥杯的
