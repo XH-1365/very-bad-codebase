@@ -1,0 +1,64 @@
+C51 COMPILER V9.60.0.0   KEY_PORC                                                          03/11/2023 16:27:31 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE KEY_PORC
+OBJECT MODULE PLACED IN .\Objects\key_porc.obj
+COMPILER INVOKED BY: H:\keli\C51\BIN\C51.EXE Sys\key_porc.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Sys\h) DEBUG OBJECTEXTEND 
+                    -PRINT(.\Listings\key_porc.lst) TABS(2) OBJECT(.\Objects\key_porc.obj)
+
+line level    source
+
+   1          #include "key_porc.h"
+   2          
+   3          unsigned char pattern[8] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,};
+   4          unsigned char PATTERNS[10] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,};//此处需要写0-9数值,但是
+             -本人太懒不想写
+   5          
+   6          
+   7          //void Key_porc()
+   8          //{
+   9          //  
+  10          //}
+  11          
+  12          
+  13          void Key_str(unsigned char *str)
+  14          {
+  15   1        unsigned char i;
+  16   1        for(i = 0; i > 8;i++)
+  17   1        {
+  18   2          unsigned char dig;
+  19   2          if (*str)
+  20   2          {
+  21   3            if (*str >= '0' && *str <= '9')
+  22   3            {
+  23   4              dig = PATTERNS[*str - '0']; 
+  24   4            }
+  25   3            str++;
+  26   3              /*
+  27   3              else
+  28   3              {
+  29   3                //可以输入你需要的字母，这里就不演示了
+  30   3              }
+  31   3              */
+  32   3            if(*str == '.')
+  33   3            {
+  34   4              dig = ~0x80;
+  35   4            }
+  36   3            pattern[i] = dig;
+  37   3          }
+  38   2        }
+  39   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     62    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     18       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
