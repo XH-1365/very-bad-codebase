@@ -1,14 +1,15 @@
 #include "key_porc.h"
+#include "Send.h"
 
 unsigned char pattern[8] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,};
 unsigned char PATTERNS[10] = {0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,};//此处需要写0-9数值,但是本人太懒不想写
 
-
-//void Key_porc()
-//{
-//	
-//}
-
+void Key_porc(unsigned char pos)
+{
+	Send_To(7,0Xff);
+	Send_To(6,1<<pos);
+	Send_To(7,pattern[pos]);
+}
 
 void Key_str(unsigned char *str)
 {

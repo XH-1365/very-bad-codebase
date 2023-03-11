@@ -1,0 +1,1 @@
+"Sys\Send.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\Sys\h) DEBUG OBJECTEXTEND PRINT(.\Listings\Send.lst) TABS (2) OBJECT(.\Objects\Send.obj)

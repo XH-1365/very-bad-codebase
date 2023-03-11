@@ -1,0 +1,171 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/11/2023  17:27:55  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+H:\KELI\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\key_porc.obj, .\Objects\Send.obj TO .\Objects\code PRINT (.\Listi
+>> ngs\code.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\key_porc.obj (KEY_PORC)
+  .\Objects\Send.obj (SEND)
+  H:\KELI\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\code (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0012H     UNIT         ?DT?KEY_PORC
+            DATA    001AH     0001H     UNIT         ?DT?_KEY_PORC?KEY_PORC
+            DATA    001BH     0001H     UNIT         ?DT?_KEY_STR?KEY_PORC
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+                    0000H     0800H                  *** GAP ***
+            CODE    0800H     003EH     UNIT         ?PR?_KEY_STR?KEY_PORC
+            CODE    083EH     0028H     UNIT         ?PR?_KEY_PORC?KEY_PORC
+            CODE    0866H     0019H     UNIT         ?C?LIB_CODE
+            CODE    087FH     0016H     UNIT         ?C_INITSEG
+            CODE    0895H     0013H     UNIT         ?PR?_SEND_TO?SEND
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\code (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\code (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        KEY_PORC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/11/2023  17:27:55  PAGE 2
+
+
+  D:00A0H         PUBLIC        P2
+  D:0008H         PUBLIC        pattern
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00E8H         PUBLIC        P6
+  D:00F8H         PUBLIC        P7
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:083EH         PUBLIC        _Key_porc
+  C:0800H         PUBLIC        _Key_str
+  D:0010H         PUBLIC        PATTERNS
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _KEY_PORC
+  D:001AH         SYMBOL        pos
+  C:083EH         LINE#         7
+  C:0840H         LINE#         8
+  C:0840H         LINE#         9
+  C:0847H         LINE#         10
+  C:085AH         LINE#         11
+  -------         ENDPROC       _KEY_PORC
+  -------         PROC          _KEY_STR
+  D:0001H         SYMBOL        str
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         DO            
+  D:001BH         SYMBOL        dig
+  -------         ENDDO         
+  -------         ENDDO         
+  C:0800H         LINE#         14
+  C:0800H         LINE#         15
+  C:0800H         LINE#         17
+  C:080CH         LINE#         18
+  C:080CH         LINE#         20
+  C:0812H         LINE#         21
+  C:0812H         LINE#         22
+  C:081DH         LINE#         23
+  C:081DH         LINE#         24
+  C:0824H         LINE#         25
+  C:0824H         LINE#         26
+  C:082BH         LINE#         33
+  C:0831H         LINE#         34
+  C:0831H         LINE#         35
+  C:0834H         LINE#         36
+  C:0834H         LINE#         37
+  C:083AH         LINE#         38
+  C:083AH         LINE#         39
+  C:083DH         LINE#         40
+  -------         ENDPROC       _KEY_STR
+  -------         ENDMOD        KEY_PORC
+
+  -------         MODULE        SEND
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/11/2023  17:27:55  PAGE 3
+
+
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00E8H         PUBLIC        P6
+  D:00F8H         PUBLIC        P7
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:0895H         PUBLIC        _Send_To
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _SEND_TO
+  D:0007H         SYMBOL        comp
+  D:0005H         SYMBOL        dat
+  C:0895H         LINE#         4
+  C:0895H         LINE#         5
+  C:0895H         LINE#         6
+  C:0897H         LINE#         7
+  C:08A4H         LINE#         8
+  C:08A7H         LINE#         9
+  -------         ENDPROC       _SEND_TO
+  -------         ENDMOD        SEND
+
+  -------         MODULE        ?C?CLDPTR
+  C:0866H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_KEY_PORC?KEY_PORC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_KEY_STR?KEY_PORC
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?C_INITSEG
+
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 008FH BYTE ( 6%) *
+******************************************************************************
+
+Program Size: data=28.0 xdata=0 code=168
+LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)
